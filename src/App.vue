@@ -2,10 +2,10 @@
 import { RouterView } from 'vue-router'
 import NavbarContainer from './components/layout/nav/NavbarContainer.vue'
 import { useProductsStore } from './stores/products'
-import { dummyData } from './data/dummyProdcuts'
+import prodcutsData from './data/dummyProdcuts.json'
 
 const store = useProductsStore()
-store.setProducts(dummyData)
+store.setProducts(prodcutsData)
 </script>
 
 <template>
