@@ -6,28 +6,28 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'Home',
       component: HomeView
     },
     {
       path: '/products',
-      name: 'products',
+      name: 'Products',
       component: () => import('../views/ProductsView.vue')
     },
     {
       path: '/saved',
-      name: 'saved',
+      name: 'Saved',
       component: () => import('../views/SavedView.vue')
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import('../views/AboutView.vue')
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
+      component: () => import('../views/NotFoundView.vue')
     },
     {
-      path: '/:pathMatch(.*)*',
-      name: 'notFound',
-      component: () => import('../views/NotFoundView.vue')
+      path: '/products//product/:id',
+      name: 'Product',
+      component: () => import('../views/ProductItemView.vue')
     }
   ]
 })
