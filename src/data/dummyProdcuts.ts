@@ -1,0 +1,84 @@
+import type { Product } from '@/types/types'
+
+export const dummyData: Product[] = [
+  {
+    id: '66a4dc7c-49b6-4f6f-8edf-d92730fa2527',
+    name: 'Slim Fit Jeans',
+    isFav: true,
+    shortDescription: 'Classic slim-fit jeans for men...',
+    description:
+      'Classic slim-fit jeans for men. Made with high-quality denim fabric, comfortable to wear all day long. Available in various sizes and colors.',
+    price: 39.99,
+    imageHref: 'https://cdn.pixabay.com/photo/2024/02/10/02/46/fitness-8564036_1280.jpg'
+  },
+  {
+    id: 'c0de4759-c901-4322-a5a0-9816bd0d2667',
+    name: 'Printed T-shirt',
+    isFav: false,
+    shortDescription: "Stylish women's printed t-shirt...",
+    description:
+      "Stylish women's printed t-shirt made from soft and breathable cotton material. Perfect for casual outings and everyday wear.",
+    price: 19.99,
+    imageHref: 'https://cdn.pixabay.com/photo/2023/08/25/07/37/shoes-8212405_1280.jpg'
+  },
+  {
+    id: '902a41ba-9ae5-41a2-b205-2b932f0a36b1',
+    name: 'Formal Blazer',
+    isFav: true,
+    shortDescription: "Elegant men's formal blazer...",
+    description:
+      "Elegant men's formal blazer crafted from premium wool blend fabric. Ideal for business meetings, weddings, or special occasions.",
+    price: 99.99,
+    imageHref: 'https://nextui.org/images/card-example-5.jpeg'
+  },
+  {
+    id: 'ff2e4e86-00b5-49f3-a03d-b4467a7487a1',
+    name: 'Leather Belt',
+    isFav: false,
+    shortDescription: 'Genuine leather belt...',
+    description:
+      'Genuine leather belt with a classic buckle design. Adds a touch of sophistication to any outfit. Available in various sizes and colors.',
+    price: 29.99,
+    imageHref: 'https://cdn.pixabay.com/photo/2024/02/12/14/56/woman-8568693_1280.jpg'
+  },
+  {
+    id: '3e526173-4f89-4f27-a1ee-981dcd14a35c',
+    name: 'Casual Sneakers',
+    isFav: true,
+    shortDescription: 'Comfortable casual sneakers...',
+    description:
+      'Comfortable casual sneakers for everyday wear. Made with breathable materials and cushioned soles for maximum comfort. Available in various sizes and colors.',
+    price: 49.99,
+    imageHref: 'https://cdn.pixabay.com/photo/2024/01/06/15/26/ai-generated-8491587_1280.jpg'
+  },
+  {
+    id: 'b1463703-ef0f-4f47-b380-2282c9c65a4b',
+    name: 'Denim Jacket',
+    isFav: false,
+    shortDescription: 'Stylish denim jacket...',
+    description:
+      'Stylish denim jacket for both men and women. Made with durable denim fabric, suitable for all seasons. Available in various sizes and designs.',
+    price: 79.99,
+    imageHref: 'https://cdn.pixabay.com/photo/2018/01/01/14/21/one-3054263_1280.jpg'
+  },
+  {
+    id: '2a6b05e2-b63d-4b13-9f10-c60d8e205b51',
+    name: 'Hooded Sweatshirt',
+    isFav: true,
+    shortDescription: 'Warm hooded sweatshirt...',
+    description:
+      'Warm hooded sweatshirt made from soft fleece fabric. Perfect for staying cozy during colder weather. Available in various sizes and colors.',
+    price: 34.99,
+    imageHref: 'https://cdn.pixabay.com/photo/2017/01/17/14/50/sneakers-1987118_640.jpg'
+  },
+  {
+    id: '7d02a0d1-8f61-4144-a1e0-f04729f01c7c',
+    name: 'Checked Shirt',
+    isFav: false,
+    shortDescription: 'Classic checked shirt...',
+    description:
+      'Classic checked shirt made from breathable cotton fabric. Suitable for both casual and semi-formal occasions. Available in various colors and patterns.',
+    price: 24.99,
+    imageHref: 'https://cdn.pixabay.com/photo/2017/01/14/10/03/fashion-1979136_640.jpg'
+  }
+]

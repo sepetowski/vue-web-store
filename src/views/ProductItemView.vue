@@ -1,5 +1,21 @@
 <script setup lang="ts">
 import WrapperElement from '@/components/ui/WrapperElement.vue'
+import { useCartStore } from '@/stores/cart'
+import { useProductsStore } from '@/stores/products'
+import { computed } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+
+const route = useRoute()
+const router = useRouter()
+
+const cartStore = useCartStore()
+const productsStore = useProductsStore()
+
+const currentProduct = computed(() =>
+  productsStore.products.find((product) => product.id === route.params.id)
+)
+
+if (!currentProduct.value) router.replace({ path: '/not-found' })
 </script>
 
 <template>
@@ -11,23 +27,29 @@ import WrapperElement from '@/components/ui/WrapperElement.vue'
         >
           <img
             class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300"
-            src="https://nextui.org/images/card-example-5.jpeg"
+            :src="currentProduct?.imageHref"
           />
         </div>
         <div class="w-1/2 flex flex-col self-stretch h-full">
           <div>
-            <h1 class="text-3xl">{{ $route.params.id }}</h1>
+            <h1 class="text-3xl">{{ currentProduct?.name }}</h1>
             <p class="my-6 text-mutated-100">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil molestias ipsa tempore
-              obcaecati eaque odit! Enim aliquid dolorum eos fuga! Soluta, repudiandae! Repudiandae
-              ipsa soluta officiis tenetur amet minus perferendis, exercitationem neque blanditiis
-              porro natus, necessitatibus inventore quasi unde dolorem quod labore aliquid sapiente
-              distinctio. Odit delectus exercitationem obcaecati eum!
+              {{ currentProduct?.description }}
             </p>
           </div>
           <div class="space-x-6">
-            <button class="bg-primary p-1 rounded-3xl px-3">Add to cart!</button>
-            <button class="bg-mutated-200 p-1 rounded-3xl px-3">Add to saved!</button>
+            <button
+              @click="cartStore.addToCart({ ...currentProduct!, amount: 1 })"
+              class="bg-primary p-1 rounded-3xl px-3"
+            >
+              Add to cart! <span>{{ currentProduct?.price }}$</span>
+            </button>
+            <button
+              @click="productsStore.toggleFavorite(currentProduct!.id)"
+              class="bg-mutated-200 p-1 rounded-3xl px-3"
+            >
+              {{ currentProduct?.isFav ? 'Remove from saved' : ' Add to saved!' }}
+            </button>
           </div>
         </div>
       </div>
